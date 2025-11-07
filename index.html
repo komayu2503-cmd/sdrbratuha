@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>С днём рождения!</title>
+  <style>
+    .float-decor {
+  position: absolute;
+  left: 60px;         /* отступ слева — можно менять */
+  top: 220px;         /* отступ сверху */
+  width: 150px;       /* размер */
+  pointer-events: none; /* не мешает кликам */
+  animation: swing 4s ease-in-out infinite;
+}
+
+/* Анимация лёгкого покачивания */
+@keyframes swing {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-3deg); }
+  100% { transform: rotate(0deg); }
+}
+    .hearts {
+  position: absolute;
+  right: 50px;   /* отступ справа — можно менять */
+  top: 200px;    /* отступ сверху */
+  width: 120px;  /* размер */
+  pointer-events: none; /* чтобы не мешало кликам */
+  animation: float 3s ease-in-out infinite; /* лёгкая анимация */
+}
+
+/* добавим плавное покачивание */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #b93c47, #f7a8b5);
+      color: #f1a2af;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 20px 0;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    main {
+      padding: 30px 10px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 250px;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    audio {
+      margin-top: 30px;
+      width: 80%;
+      max-width: 400px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+  </style> 
+</head>
+<body>
+
+  <header>Воспоминания!</header>
+
+  <main>
+    <h2>Фотки</h2>
+    <div class="gallery">
+      <img src="photo1.jpg" alt="Фото 1">
+      <img src="photo2.jpg" alt="Фото 2">
+      <img src="photo3.jpg" alt="Фото 3">
+       <img src="hearts.png" alt="Сердца" class="hearts">
+       <img src="dr.gif" alt="Шкебеде" class="float-decor">
+    </div>
+
+    <p>Для вайба</p>
+
+     <p>Я уже писал большой текст с поздравлением поэтому здесь мне сказать нечего, кроме того что я старался 😊</p>
+
+    <audio controls autoplay loop>
+      <source src="music.mp3" type="audio/mpeg">
+      Твой браузер не поддерживает музыку.
+    </audio>
+  </main>
+
+  <footer>© 2025 С днём рождения!</footer>
+
+</body>
+</html>
